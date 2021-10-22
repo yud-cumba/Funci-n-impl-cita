@@ -1,0 +1,147 @@
+\chapter{La función implícita, un caso particular}
+%parte de renzo%
+\begin{Teo}
+  $F:\mathbb{R}^2\rightarrow \mathbb{R}$ es de clase $C^{1}$, $(x_{0},z_{0}) \in \mathbb{R}^2$ tal que\\
+  $F(x_{0},z_{0})=0$ y $ \frac{\partial F}{\partial Z}(x_{0},z_{0})\ne 0$\\
+Entonces existen vecindades $U\ni x_{0} $ y $V\ni z_{0}$ y una funci\'on $C^1$:
+    $$g:U\rightarrow V$$
+   $$ \qquad \qquad x\longmapsto z=g(x)$$
+Tal que $F(x,z)=0$ $\forall x \in U$, $\forall z\in V$ y :
+$$\frac{\partial g}{\partial x} = - \frac{\frac{\partial F}{\partial x}}{\frac{\partial F}{\partial z}}$$
+\end{Teo}
+\begin{proof}
+Supongamos que $\frac{\partial F}{\partial z}(x_{0},z_{0})>0$\\
+\begin{Afi}
+Existen $a,b > 0$ y $M>0$ tal que:\
+\begin{center}
+$ |x-x_{0}|<a$ y $|z-z_{0}|<a $ entonces  $\frac{\partial F}{\partial z}(x,z)>b$ y $|\frac{\partial F}{\partial x}(x,z)|\leq M$
+\end{center}
+\end{Afi}
+En efecto :\
+\begin{itemize}
+    \item $\frac{\partial F}{\partial x}(x,z)$ es continua en $(x_{0},z_{0})$
+\end{itemize}
+Entonces $\forall \epsilon >0, \exists \delta >0$ tal que:\
+   $$(x,z)\in \mathbb{R}^2 ||(x,z)-(x_{0},z_{0})||< \delta$$
+    
+    $ |\frac{\partial F}{\partial z}(x,z)-\frac{\partial F}{\partial z}(x_{0},z_{0})|< \epsilon$\\\\
+    $\frac{\partial F}{\partial z}(x_{0},z_{0})- \epsilon < \frac{\partial F}{\partial z}(x,z) < \frac{\partial F}{\partial z}(x_{0},z_{0}) + \epsilon$
+\begin{Obs}
+$||(x,z)-(x_{0},z_{0})||< \delta $ $\Longleftrightarrow$ $|x-x_{0}|<\delta$ y $|z-z_{0}|<\delta$
+\end{Obs} 
+Se toma $$\epsilon=\frac{\partial F}{2\partial z}(x_{0},z_{0})>0$$ entonces 
+    $\exists \delta > 0$ y $\exists b=\frac{\partial F}{2\partial z}(x_{0},z_{0})>0$ 
+Tal que
+    $\frac{\partial F}{\partial z}(x,z) > b$ si $|x-x_{0}|< \delta $ y $|z-z_{0}|< \delta$
+\begin{itemize}
+    \item $\frac{\partial F}{\partial z}(x,z)$ es continua en $(x_{0},z_{0})$
+\end{itemize}
+Entonces $\forall \epsilon >0, \exists \delta >0$ tal que
+    $(x,z)\in \mathbb{R}^2$, $||(x,z)-(x_{0},z_{0})||< \delta'$\\
+    
+    $ |\frac{\partial F}{\partial x}(x,z)-\frac{\partial F}{\partial x}(x_{0},z_{0})|< \epsilon$ \\
+    
+    $ |\frac{\partial F}{\partial x}(x,z)|< (|\frac{\partial F}{\partial x}(x_{0},z_{0})|+\epsilon)$\\\\
+Se toma $a \equiv min ({\delta ,\delta'})> 0$
+
+\begin{Afi}
+La funci\'on $F(x,z)$ se puede escribir en la forma siguiente: \\
+\begin{eqnarray}
+    F(x,z)= \frac{\partial F}{\partial x}(\theta x +(1-\theta)x_{0},z).(x-x_{0})+\frac{\partial F}{\partial z}(x_{0},\phi z +(1-\phi)z_{0}).(z-z_{0})
+    \label{asterisco}
+\end{eqnarray}
+   \textit{Donde }$0< \theta$, $\phi <1$
+\end{Afi}
+En efecto :
+%\begin{center}
+    \begin{eqnarray}
+   F(x,z)= F(x,z)-F(x_{0},z) = [F(x,z)-F(x_{0},z)] +  [F(x_{0},z)-F(x_{0},z_{0})]
+   \label{uno}
+    \end{eqnarray}
+     \begin{itemize}
+         \item $h(t)\equiv F(tx+(1-t)x_{0},z)$ (con x, y, z fijos)
+     \end{itemize}
+Entonces, por el el teorema del valor medio existe un número $\theta$ entre $0$ y $1$ tal que:\\
+$$h(1)-h(0)=h'(\theta (1-0))$$\\Entonces: 
+$$F(x,z)-F(x_{0},z)=\frac{\partial F}{\partial x}(\theta x + (1-\theta)x_{0},z)(x-x_{0}) $$
+\begin{itemize}
+    \item An\'alogamente :\ $J(t)\equiv F(x_{0},tz+(1-t)z_{0})$ (con z fijo)
+\end{itemize}
+Entonces, por el teorema del valor medio
+\begin{eqnarray}
+  |F(x_{0},z)-F(x_{0},z_{0})=\frac{\partial F}{\partial z}(x_{0},\phi z + (1-\phi)z_{0})(z-z_{0}) 
+ \label{tres}
+\end{eqnarray}
+Donde $ \phi\in[0,1]$
+\begin{Afi}
+Existen $a_{0}, \delta > 0$ con $a_{0} < a$ y $\delta <a_{0}$ tal que:\\
+$|x-x_{0}|<\delta$  entonces $F(x, z_{0}+ a_{0}) > 0$ y $F(x, z_{0}-a_{0}) < 0$
+\end{Afi}
+En efecto
+\begin{itemize}
+    \item Como $0<a_{0}$ y $\bar{\mathbb{Q}}= \mathbb{R}$, entonces $\exists a_{0}$ tal que $0< a_{0}<a $
+\end{itemize}
+\begin{itemize}
+    \item $0 < a_{0}$ y $\bar{\mathbb{Q}}= \mathbb{R}$, entonces $\exists \delta_{1}$ tal que $0 < \delta_{1} < a_{0}$\\
+    
+    $0 < \frac{ba_{0}}{M} $, entonces $\exists \delta_{2}$ tal que $0 < \delta_{2} < \frac{ba_{0}}{M}$\\
+    
+    Tomo $\delta = min(\delta_{1},\delta_{2}) > 0$, entonces $\exists \delta > 0$ tal que $\delta < a_{0}, \frac{ba_{0}}{M}$
+\end{itemize}
+
+\begin{itemize}
+    \item Si $|x-x_{0}| < \delta$\\\\
+    Entonces $|x-x_{0}| < a $\\
+    En consecuencia \\\\
+    $\left(
+      \begin{matrix} 
+         |\frac{\partial F}{\partial x}(\theta x + (1-\theta)x_{0}, z)(x-x_{0})| \\\\
+         = |\frac{\partial F}{\partial x}(\theta x + (1-\theta)x_{0}, z)||(x-x_{0})|
+      \end{matrix}
+   \right \}$\\\\ \\$|\theta x + (1-\theta)x_{0}-x_{0}|= |\theta x - \theta x_{0}|= |\theta||x-x_{0}|\leq|x-x_{0}|< a_{0}<a$ $< M\delta <M\frac{ba_{0}}{M}= ba_{0}$\\
+Asi: $$|\frac{\partial F}{\partial x}(\theta x + (1-\theta)x_{0},z)(x-x_{0})|< ba_{0}$$\\
+Si $|x-x_{0}|< \delta$, donde $z-z_{0}< a$
+\end{itemize}
+\begin{itemize}
+    \item En \ref{asterisco}, se toma $z=z_{0}+a_{0}$,\
+    $F(x,z_{0}+a_{0})= \frac{\partial F}{\partial x}(\theta x + (1-\theta)x_{0},z_{0}+a_{0}).(x-x_{0})+ \frac{\partial F}{\partial z}(x_{0},\phi a_{0}+z_{0}).a_{0} > -ba_{0} + ba_{0}> 0$
+\end{itemize}
+\begin{itemize}
+    \item An\'alogamente $F(x,z_{0}-a_{0})< 0 $
+\end{itemize}
+Sean $U$ la vecindad de centro $x_{0}$ y radio $\delta$, $V$ la vecindad de centro $z_{0}$ y radio $a_{0}$\\
+Fijemos $x\in U$, y definamos la funci\'on:
+\begin{center}
+    $k:V \rightarrow \mathbb{R}$\\
+    $\qquad \qquad \qquad \qquad z\longrightarrow k(z)\subseteq F(x,z)$
+\end{center}
+Se sigue que $K\in C^{1}$, y como $K(z_{0}+a_{0})>0$ y $K(z_{0}-a_{0})<0 $\\
+Por el TVI: $\exists z\in V$ tal que $K(a)=0$\\
+Entonces: $F(x,z)=0$ y como $K'=\frac{\partial F}{\partial z} > 0$, $z \in \delta$ \textit{tal que } $$\forall x\in \exists!z\in V \textit{tal que} F(x,z)=0$$
+Esto permite definir la funci\'on :
+\begin{center}
+    $g:U \rightarrow V$\\
+    $\qquad \qquad  x\longrightarrow z=g(x)$
+\end{center}
+de tal forma que $F(x,z)=0$, $\forall x\in U$, $\forall z\in V$\\
+\begin{Afi}
+ $g: U \rightarrow V $es continua\\
+ \end{Afi}
+ En efecto: Sea $x_{0}\in U$, por demostrar: \\
+ \begin{center}
+     $g$ es constante  en $x_{1}$ $\Longleftrightarrow\lim_{x \to x_{0}}g(x)=g(x_{0})$\\ $$\Longleftrightarrow \lim_{x \to x_{0}}g(x)-g(x_{0})=0 \Longleftrightarrow\lim_{x \to x_{0}}z-z_{0}=0$$
+ \end{center}
+ De \ref{asterisco}\\
+      $$z-z_{0}=-\frac{\frac{\partial F}{\partial x}(\theta x+(1-\theta)x_{0},z)(x-x_{0})}{\frac{\partial F}{\partial z }(x_{0}, \phi z + (1-\phi)z_{0})}$$
+ Entonces:
+    $$\lim_{x \to x_{0}}(z-z_{0})= -\frac{\frac{\partial F}{\partial x}(x_{0},z).0}{\frac{\partial F}{\partial z }(x_{0}, \phi z + (1-\phi)z_{0})}=0$$
+\begin{Afi}
+$g: U \rightarrow V $ es $C^{1}$
+\end{Afi}
+En efecto: 
+\\Sea $x_0\in U$\\
+   $$ \frac{g(x_{0}+h)-g(x_{0})}{h}=-\frac{\frac{\partial F}{\partial x}(\theta h+x_{0},z)}{\frac{\partial F}{\partial z }(x_{0}, \phi z+(1-\phi)z_{0} )}$$
+   $$=-\frac{\frac{\partial F}{\partial x}(\theta h+x_{0},g(x_{0}+h))}{\frac{\partial F}{\partial z }(x_{0}, \phi g(x_{0}+h)+(1-\phi)g(x_{0}) )}$$
+ $$g'(x_{0})=\lim_{h \to 0}\frac{g(x_{0}+h)-g(x_{0})}{h} =-\frac{\frac{\partial F}{\partial x}(x_{0},g(x_{0}))}{\frac{\partial F}{\partial z }(x_{0}, g(x_{0})) )}\in C^{1}$$
+$$\therefore g \in C^{1}$$
+\end{proof}

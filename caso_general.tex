@@ -1,0 +1,33 @@
+\chapter{El teorema de la función implícita, caso general}
+
+Para llegar al objetivo de demostrar el teorema de la función implícita, se usará principalmente el teorema de la función inversa y el teorema de la forma local de las sumersiones. Las demostraciones de estos teoremas se encontrarán citadas para el lector interesado.
+\section{Preliminares}
+Se debe tener en cuenta que los puntos del espacio $\R^{m+n}$ serán representados de la forma $p=(a,b)$, donde $a\in\R^m$ y $b\in\R^n$.
+\begin{Teo}(Teorema de la función inversa)\\
+Sea $U\subseteq\R^m $ abierto, $f\in C^k(U,\R^m), k\in\N$ tal que $f'(a)\in GL(\R^m)$ (donde $a\in U$). Entonces existen vecindades $W\subseteq U$ y $V\subseteq\R^m$ de a y f(a) respectivamente tal que $f:W\rightarrow V$ es un difeomorfismo de clase $C^k$.\\
+(\textnormal{Ver demostración en} Lages \cite{lagesflaco} [pág. 115-116])
+\end{Teo}
+\begin{Def}
+Sea $U\subseteq\R^m $ abierto, $f:U\rightarrow\R^m$ una función diferenciable en U. Se dice que f es una sumersión de U en $\R^n$ si y solo si $f'(x)\in\mathcal{L}(\R^m,\R^n)$ es sobreyectiva.
+\end{Def}
+El teorema siguiente nos muestra que una sumersión puede comportarse localmente como una proyección. Su demostración usa el teorema de la función inversa.
+\begin{Teo}(Formas locales de las sumersiones)\\
+\label{sumersiones}
+Sea $U\subseteq\R^{m+n} $ abierto, $f\in C^k(U,\R^n), k\in\N$. Sea $p=(a,b)\in U$ donde $a\in\R^m$ y $b\in\R^n$. Si $f'(p)\in GL(\R^m)$ es sobreyectiva, entonces  existen vecindades $V\subseteq \R^m$, $W\subseteq\R^{n}$ y $Z\subseteq U$  de a, f(p) y p  respectivamente, tal que existe $h_p:V\times W\rightarrow Z$ tales que
+\begin{enumerate}
+    \item $h_p(a,f(p))=p$
+    \item $(f\circ h_p)(v,w)=w$ \textbf{           } $\forall v\in V, w\in W$
+\end{enumerate}
+(\textnormal{Ver demostración en} Lages \cite{lagesflaco} [pág. 117-119])
+\end{Teo}
+\section{Teorema de las funciones implícitas}
+Este teorema establece condiciones suficientes, bajo el conjunto de ecuaciones de varias variables permite definir a varias de ellas como función de las demás.
+Es decir, localmente existe una función $y=f(x)$ que sustituida en la ecuación $F(x,y)=c$ , la convierte en una identidad matemática.
+\begin{Teo}
+Sea $U\subseteq\R^{m+n} $ abierto, $F=(F_1,\ldots,F_n):U\rightarrow\R^n$ de clase $C^k$. Supongamos que en un punto $p=(a,b)$ con $F(p)=c$ y la matriz $$\bigg[\frac{\partial F_i}{\partial y_j}(p)\bigg]\in GL(\R^n)\textsf{       i,j=1,\ldots,n}$$
+Entonces existen vecindades $V\subseteq \R^m$, y $Z\subseteq U$  de a y p  respectivamente, y una función $f:V\rightarrow\R^n$ de clase $C^k$ tal que $b=f(a)$ y $$F(x,f(x))=c\textsf{,    }\forall x\in V$$
+\end{Teo}
+\begin{proof}
+  \textsf{}\\Sea V, W, Z y h como en el teorema \ref{sumersiones}.\\Definamos $f:V\rightarrow    \R^n$ como $f(x)=h_2(x,c)$, donde $h_2:V\times W\rightarrow\R^n$ es la proyección a la segunda coordenada de h, es decir $h(x,w)=(x,h_2(x,w))$. Asimismo $(x,y)\in Z$ entonces $x\in V$ y $(x,y)=h(x,w),$ $w\in W$.\\si además se tiene f(x,y)=c, entonces c=f(x,y)=f(x,f(x)) e $y=(x)$.\\
+Resumiendo: $(x,y)\in Z$ e $f(x,y)=c$ implican que $x\in V$ e $y=f(x)$.\\ Recíprocamente si $x\in V$ e $y=h(x)$ entonces $y=h_2(x,c)$ e $f(x,y)=f(x,h_2(x,c))=f(h(x,c))=c$
+\end{proof}

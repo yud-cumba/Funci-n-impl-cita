@@ -1,0 +1,67 @@
+\chapter{Aplicación a la geometría diferencial}
+\section{Primeras definiciones y ejemplos}
+Intuitivamente una curva en $\R^{3}$ es un conjunto que se puede identificar con un subconjunto de $\R$ (esto es, puede ser parametrizado por una función en una variable) y una superficie en $\R^{3}$ es un conjunto que se puede identificar con un subconjunto de $\R^{2}$  (esto es, puede ser parametrizado por una función en dos variables). El propósito de esta sección es formalizar estas nociones, extendiéndolas a la totalidad de espacios euclidianos y generalizándolas a términos locales, de manera que podamos clasificarlas por dimensión y regularidad.
+
+\begin{Def}
+Sea $V\subseteq\R^{n}$ y $k\in\N\cup\{\infty\}$, una parametrización de clase $C^{k}$ y dimensión $m$ del conjunto $V$ es un par $(U,\varphi)$, donde $U\subseteq\R^{m}$ es un abierto y $\varphi:U\rightarrow V$ es un homeomorfismo de clase $C^{k}$ con $\varphi'(x)\in L(R^{m},R^{n})$ inyectiva para todo $x\in U$.
+\end{Def}
+
+\begin{Obs}
+En la definición, fijado $x_{0}\in U$, como $\varphi'(x_{0}):\R^{m}\rightarrow\R^{n}$ es una transformación lineal inyectiva, entonces $dim[\varphi'(x_{0})(R^{m})]=m\leq n$ (i.e. la dimensión de la parametrización no supera la dimensión del espacio hábitat del conjunto parametrizado.)
+\end{Obs}
+
+\begin{Obs}
+En la definición, sea $\varphi=(\varphi_{1},...,\varphi_{n})$, para todo $p\in V$ existe $(x_{1},...,x_{m})=\varphi^{-1}(p)$ y tenemos que $p=(\varphi_{1}(x_{1},...,x_{m}),...,\varphi_{n}(x_{1},...,x_{m}))$ (i.e. todo $p\in V$ depende solo de $m$ coordenadas).
+\end{Obs}
+\begin{Def} Una superficie de dimensión $m$ y clase $C^{k}$ es un subconjunto $M\in\R^{n}$ tal que para todo punto $p\in M$ existe una vecindad abierta $U_{p}\in \R^{n}$ de $p$ tal que el conjunto $U_{p}\cup M$ admite una parametrización de clase $C^{k}$ y dimensión $M$.
+\end{Def}
+
+\begin{Obs}
+$U_{p}\cup M$ es llamada \textit{vecindad parametrizada del punto $p$}.
+\end{Obs}
+
+\begin{Obs}
+Las superficies de dimensión 1 son llamadas \textit{curvas} y las superficies de dimensión $n-1$ en $\R^{n}$ son llamadas \textit{hiperficies}.
+\end{Obs}
+
+\begin{Ejm}
+Sea $V=S^{1}-\{0\}$, $V_{0}=]0,2\pi[$ ,
+\begin{center}
+    $\phi:V_{0}\rightarrow V$\\
+    $\qquad \qquad \qquad  t\longrightarrow(\cos(t),\sin(t))$
+\end{center} forman una parametrización de clase $C^{\infty}$ y dimensión 1 que funciona para todo punto $p\in V$, entonces V es una superficie de dimensión 1 (curva) y clase $C^{\infty}$. Este tipo de curvas se denominan simples.
+\end{Ejm}
+
+\section{Superficies definidas implícitamente}
+
+\begin{Def}
+Sea $U\in\R^{m}$ un abierto y $f:U\rightarrow\R^{n}$ una función diferenciable, decimos que $c\in\R^{n}$ es un valor regular de $f$ si y solo si $f'(x)\in L(\R^{m},\R^{n}$ es sobreyectiva para todo $x\in f^{-1}(c)$.
+\end{Def}
+
+\begin{Lem}
+Si $U\in\R^{m}$ es un abierto y $f:U\rightarrow\R^{n}$ una función de clase $C^{k}$, entonces el gráfico de $f$, $G(f)=\{(x,f(x))\in \R^{m+n}:x\in U\}$, es una superficie de dimensión m y de clase $C^{k}$ de $\R^{m+n}$.
+\end{Lem}
+
+\begin{proof}
+ Basta considerar el par $(U,\phi)$ donde $\phi:U\rightarrow G(f)$ está definida por $\phi(x)=(x,f(x))$, claramente $\phi$ es un homeomorfismo y su matriz $J(\phi(x))$ tiene rango $m$ para todo $x\in U$, esto es, $\phi'(x)$ es inyectiva para todo $x\in U$, luego, $(U,\phi)$ es una parametrización de clase $C^{k}$ y dimensión $m$ que funciona para todo punto $p\in G(f)$, por lo tanto, $G(f)$ es una superficie de dimensión $m$ y clase $C^{k}$ de $\R^{m+n}$.
+\end{proof}
+
+\begin{Teo}
+Sea $U\in\R^{m}$ un abierto, $f\in C^{k}(U,\R^{n})$ y $c\in R^{n}$ un valor regular de $f$, entonces, $f^{-1}(c)\subseteq\R^{m}$ es una superficie de dimensión $m-n$ y de clase $C^{k}$.
+\end{Teo}
+
+\begin{proof}
+Sea $p=(p',p'')\in f^{-1}(c)$, desde que $f'(p)\in L(\R^{m},\R^{n})$ es sobreyectiva, por el teorema de la función implícita, existen abiertos $Z_{p}\subseteq U$, $V_{p}\subseteq\R^{m-n}$ con $p\in Z_{p}$, $p'\in V_{p}$ y existe una función $\xi_{p}:V_{p}\rightarrow\R^{n}$ de clase $C^{k}$ tal que $G(\xi_{p})=\{(x,\xi_{p}(x)):x\in V_{p}\}=Z_{p}\cup f^{-1}(c)$.\\Sea $\phi_{p}:V_{p}\rightarrow Z_{p}\cup f^{-1}(c)$ definida por $\phi_{p}(x)=(x,\xi_{p}(x))$, luego, por el lema anterior, $(V_{p},\phi_{p})$ es una parametrización de clase $C^{k}$ y dimensión $m-n$ de $Z_{p}\cup f^{-1}(c)$, así, $f^{-1}(c)$ es un superficie de dimensión $m-n$ y clase $C^{k}$.
+\end{proof}
+
+\begin{Obs}
+En el siguiente ejemplo mostraremos uno de los potentes usos del teorema anterior. 
+\end{Obs}
+
+\begin{Ejm}(La esfera $S^n$ definida implícitamente)
+\begin{center}
+    $f:\R^n \rightarrow \R$\\
+    $\qquad \qquad  x\longrightarrow f(x)=\|x\|^2$
+\end{center}
+Se sigue que $\triangledown f(x)=2x$ y por 1 es valor regular es valor regular de f.\\ Como $f^{-1}=S^{n-1}$, se sigue que $S^{n-1}$ es una superficie de clase $C^\infty$ y codimensión 1. Más aún $$T_pS^{n-1}=Nu(f'(p))=\{h\in\R^n :\langle p,h \rangle=0\}=\langle p\rangle^\bot$$
+\end{Ejm}
